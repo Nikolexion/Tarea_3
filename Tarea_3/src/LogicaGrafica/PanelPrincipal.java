@@ -12,7 +12,16 @@ public class PanelPrincipal extends JPanel {
         com = new PanelComprador();
         image = new ImageIcon("resources/comprador.png").getImage();
         this.setSize(800, 600);
+
         this.setBackground(Color.WHITE);
+
+        JFrame frame = new JFrame("Expendedor");
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.add(this);
+        frame.setSize(1366,768);
+        frame.setLocationRelativeTo(null);
+        frame.setVisible(true);
+
 
 
     }
