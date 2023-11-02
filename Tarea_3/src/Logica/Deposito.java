@@ -1,4 +1,4 @@
-/**
+package Logica; /**
  * Clase para generar un ArrayList arbitrario para guardar ya sea monedas o productos. Contiene métodos para agregar
  * elementos al array y sacar elementos del mismo.
  * @author lulunkaii
@@ -6,7 +6,7 @@
 
 import java.util.ArrayList;
 
-class Deposito <T> {
+public class Deposito <T> {
     /** Propiedad ArrayList arbitrario para almacenar el array */
     private ArrayList<T>  al;
 

@@ -1,9 +1,11 @@
+package Logica;
+
 /**
  * Tipo de moneda de valor 1500, tiene un método para obtener su valor como número entero
  * @author Nikolexion
  */
 
-class Moneda1500 extends Moneda{
+public class Moneda1500 extends Moneda{
     /** Constructor con super() para llegar a la superclase */
     public Moneda1500() {
         super();

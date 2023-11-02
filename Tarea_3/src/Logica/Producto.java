@@ -1,3 +1,5 @@
+package Logica;
+
 /**
  * Esta clase abstracta es la generalización de las clases de productos disponibles a la venta
  * @author Nikolexion

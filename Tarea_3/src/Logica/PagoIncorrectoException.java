@@ -1,3 +1,5 @@
+package Logica;
+
 /**
  * Subclase de Exception, sirve para determinar un error al momento de comprar y que la moneda sea inválida, ya sea una
  * moneda nula o una moneda incorrecta (como Moneda1500).

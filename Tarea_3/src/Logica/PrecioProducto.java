@@ -1,3 +1,5 @@
+package Logica;
+
 /**
  * Clase enumerada para establecer los índices de los productos (escritos en orden) y fijar sus precios. Tiene un
  * método para acceder al precio del producto desde otras clases.

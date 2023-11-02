@@ -1,9 +1,11 @@
+package Logica;
+
 /**
  * Esta clase abstracta es una extensión de Producto para crear la subcategoría Dulce dentro de los tipos de Producto
  * @author Nikolexion
  */
 
-abstract class Dulce extends Producto{
+public abstract class Dulce extends Producto{
     /** Constructor vacío de la clase */
     public Dulce() {
     }

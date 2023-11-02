@@ -1,3 +1,5 @@
+package Logica;
+
 /**
  * Subclase de Exception, sirve para determinar un error al momento de comprar y que no alcance el dinero para el
  * producto solicitado.

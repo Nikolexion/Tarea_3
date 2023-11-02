@@ -1,10 +1,12 @@
+package Logica;
+
 /**
  * Esta clase es la generalización de los tipos de monedas disponibles para comprar, implementa Comparable, toString,
  * getValor y getSerie
  * @author lulunkaii
  */
 
-abstract class Moneda implements Comparable<Moneda> {
+public abstract class Moneda implements Comparable<Moneda> {
     /** Propiedad privada para guardar la serie inicializada en el constructor */
     protected int serie;
 

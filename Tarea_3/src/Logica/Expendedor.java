@@ -1,10 +1,12 @@
+package Logica;
+
 /**
  * Clase que principal del código en donde se relacionan todas las clases para que se efectúe una compra. Inicializa
  * y llena los depósitos, contiene el método comprarProducto junto a las posibles Exceptions que puede gatillar en su
  * uso. Además, tiene un método para obtener el vuelto.
  */
 
-class Expendedor {
+public class Expendedor {
     /**
      * Propiedades Depósito para guardar cada producto
      */

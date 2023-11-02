@@ -1,9 +1,11 @@
+package Logica;
+
 /**
  * Tipo de Bebida Sprite, se inicializa con su serie y tiene un método para retornar su sonido
  * @author Nikolexion
  */
 
-class Sprite extends Bebida{
+public class Sprite extends Bebida{
     /** Constructor para inicializar la Serie
      * @param serie
      */

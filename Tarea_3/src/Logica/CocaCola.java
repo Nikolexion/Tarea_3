@@ -1,9 +1,11 @@
+package Logica;
+
 /**
  * Tipo de Bebida Cocacola, se inicializa con su serie y tiene un método para retornar su sonido
  * @author Nikolexion
  */
 
-class CocaCola extends Bebida{
+public class CocaCola extends Bebida{
     /** Constructor para inicializar la Serie
      * @param serie
      */

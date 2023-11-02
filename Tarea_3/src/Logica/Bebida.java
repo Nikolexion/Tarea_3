@@ -1,9 +1,11 @@
+package Logica;
+
 /**
  * Esta clase abstracta es una extensión de Producto para crear la subcategoría Bebida dentro de los tipos de Producto
  * @author Nikolexion
  */
 
-abstract class Bebida extends Producto{
+public abstract class Bebida extends Producto{
     /** Propiedad privada de Bebida para guardar la serie inicializada en el constructor */
     private int serie;
 

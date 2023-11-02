@@ -1,3 +1,5 @@
+package Logica;
+
 /**
  * Tipo de Dulce Super8, tiene un método para retornar su sonido
  * @author Nikolexion

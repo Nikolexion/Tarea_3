@@ -1,9 +1,11 @@
+package Logica;
+
 /**
  * Tipo de Bebida Fanta, se inicializa con su serie y tiene un método para retornar su sonido
  * @author Nikolexion
  */
 
-public class Fanta extends Bebida{
+ class Fanta extends Bebida{
     /**
      * Constructor para inicializar la Serie
      * @param serie

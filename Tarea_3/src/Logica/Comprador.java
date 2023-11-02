@@ -1,3 +1,5 @@
+package Logica;
+
 /**
  * Clase que representa a un Comprador en nuestro sistema, sirve para efectuar y calcular la compra, que retorne el
  * vuelto, y que el Comprador se tome la Bebida o se coma el Dulce. Ya que involucra a comprarProducto() puede hacer
@@ -6,7 +8,7 @@
  * @author Nikolexion
  */
 
-class Comprador{
+public class Comprador{
     /** Propiedad sonido para almacenar el String obtenido en el método comer() de Producto */
     private String sonido;
 
