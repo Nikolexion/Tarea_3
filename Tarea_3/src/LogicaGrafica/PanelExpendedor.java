@@ -2,36 +2,65 @@ package LogicaGrafica;
 
 import javax.swing.*;
 import java.awt.*;
-import java.util.List;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+/**Clase que configura el panel que contiene todas las funcionalidades del expendedor
+ * @author lulunkaii
+ * @author Nikolexion
+*/
 
 public class PanelExpendedor extends JPanel {
+    private PanelDeposito dep;
     private Image imagenExpendedor;
-    public List<Zona> zonas;
-
-    public void paint(Graphics g) {
-        super.paint(g);
-        imagenExpendedor = new ImageIcon("resources/Expendedor.png").getImage();
-        g.drawImage(imagenExpendedor,30,10,512,700,this);
+    public Zona zonaCoca;
+    public Zona zonaSprite;
+    public Zona zonaFanta;
+    public Zona zonaSnikers;
+    public Zona zonaSuper8;
+    public PanelExpendedor(){
+        dep = new PanelDeposito();
         JButton botonCoca = new JButton("Zona Coca");
         JButton botonSprite = new JButton("Zona Sprite");
         JButton botonFanta = new JButton("Zona Fanta");
         JButton botonSnikers = new JButton("Zona Snikers");
         JButton botonSuper8 = new JButton("Zona Super8");
-
-
-        Zona zonaCoca = new Zona(411, 56, 46, 48, botonCoca);
+        zonaCoca = new Zona(411, 56, 46, 48, botonCoca);
         add(zonaCoca.getBoton());
 
-        Zona zonaSprite = new Zona(411, 156, 46, 48, botonSprite);
+        zonaSprite = new Zona(411, 156, 46, 48, botonSprite);
         add(zonaSprite.getBoton());
 
-        Zona zonaFanta = new Zona(411, 256, 46, 48, botonFanta);
+        zonaFanta = new Zona(411, 256, 46, 48, botonFanta);
         add(zonaFanta.getBoton());
 
-        Zona zonaSnikers = new Zona(411, 356, 46, 48, botonSnikers);
+        zonaSnikers = new Zona(411, 356, 46, 48, botonSnikers);
         add(zonaSnikers.getBoton());
 
-        Zona zonaSuper8 = new Zona(411, 457, 46, 48, botonSuper8);
+        zonaSuper8 = new Zona(411, 457, 46, 48, botonSuper8);
         add(zonaSuper8.getBoton());
+
+
+
+    }
+    public void click(MouseEvent e){
+        if (zonaCoca.contienePunto(e.getX(), e.getY())) {
+            System.out.println("coca");
+        } else if (zonaSprite.contienePunto(e.getX(), e.getY())) {
+            System.out.println("sprite");
+        } else if (zonaFanta.contienePunto(e.getX(), e.getY())) {
+            System.out.println("fanta");
+        } else if (zonaSnikers.contienePunto(e.getX(), e.getY())) {
+            System.out.println("snikers");
+        } else if (zonaSuper8.contienePunto(e.getX(), e.getY())) {
+            System.out.println("super8");
+        }
+    }
+
+    public void paint(Graphics g) {
+        super.paint(g);
+        imagenExpendedor = new ImageIcon("resources/Expendedor.png").getImage();
+        g.drawImage(imagenExpendedor,30,10,512,700,this);
+        dep.paint(g);
+
     }
 }

@@ -22,29 +22,19 @@ public class PanelPrincipal extends JPanel {
         frame.setSize(1366,768);
         frame.setLocationRelativeTo(null);
         frame.setVisible(true);
-
         addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {
-                for (Zona zona : exp.zonas) {
-                    if (zona.contienePunto(e.getX(), e.getY())) {
-                        // El clic ocurrió en esta zona
-                        JOptionPane.showMessageDialog(null, "Hiciste clic en " + zona.getBoton().getText());
-                        // Realiza cualquier acción adicional que desees
-                    }
-                }
+                exp.click(e);
+                com.click(e);
             }
         });
-
-
     }
     @Override
     public void paint(Graphics g){
         super.paint(g);
         exp.paint(g);
         com.paint(g);
-
-
     }
 
 }
