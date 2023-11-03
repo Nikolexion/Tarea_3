@@ -2,15 +2,16 @@ package LogicaGrafica;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 
 public class PanelPrincipal extends JPanel {
     private PanelComprador com;
     private PanelExpendedor exp;
-    private Image image;
+
     public PanelPrincipal(){
         exp = new PanelExpendedor();
         com = new PanelComprador();
-        image = new ImageIcon("resources/comprador.png").getImage();
         this.setSize(800, 600);
 
         this.setBackground(Color.WHITE);
@@ -22,18 +23,27 @@ public class PanelPrincipal extends JPanel {
         frame.setLocationRelativeTo(null);
         frame.setVisible(true);
 
+        addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                for (Zona zona : exp.zonas) {
+                    if (zona.contienePunto(e.getX(), e.getY())) {
+                        // El clic ocurrió en esta zona
+                        JOptionPane.showMessageDialog(null, "Hiciste clic en " + zona.getBoton().getText());
+                        // Realiza cualquier acción adicional que desees
+                    }
+                }
+            }
+        });
 
 
     }
     @Override
     public void paint(Graphics g){
         super.paint(g);
-        com.paint(g);
         exp.paint(g);
-        g.setColor(Color.BLACK);
-        g.drawLine(683, 0, 683, 768);
-        g.drawLine(683, 384, 1366, 384);
-        g.drawImage(image, 100, 100, 280, 346, this);
+        com.paint(g);
+
 
     }
 
