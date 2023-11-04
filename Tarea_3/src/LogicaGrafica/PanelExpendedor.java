@@ -40,7 +40,6 @@ public class PanelExpendedor extends JPanel {
         add(zonaSuper8.getBoton());
 
 
-
     }
     public void click(MouseEvent e){
         if (zonaCoca.contienePunto(e.getX(), e.getY())) {
