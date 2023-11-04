@@ -2,8 +2,8 @@ package Logica;
 
 public class DepositoRetiro {
     private Producto producto;
-    public DepositoRetiro(){
-
+    public DepositoRetiro(Producto producto){
+        this.producto = producto;
     }
 
     public Producto getProducto() {

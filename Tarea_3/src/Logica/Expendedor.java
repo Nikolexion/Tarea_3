@@ -15,6 +15,7 @@ public class Expendedor {
     private Deposito<Producto> fanta;
     private Deposito<Producto> snickers;
     private Deposito<Producto> super8;
+    public DepositoRetiro cajaRetiro;
 
     /**
      * Propiedades Depósito para guardar las monedas
@@ -35,6 +36,7 @@ public class Expendedor {
         snickers = new Deposito<>();
         super8 = new Deposito<>();
         monVu = new Deposito<>();
+        cajaRetiro = new DepositoRetiro(null);
 
         for (int i = 0; i < numProductos; i++) {
             coca.addElemento(new CocaCola(100 + i));
@@ -59,7 +61,7 @@ public class Expendedor {
      * @throws PagoIncorrectoException   Error por pagar con una moneda nula o inválida (ej: 1500)
      * @throws NoHayProductoException    Error debido a que no quedan productos en el depósito o no existe el producto
      */
-    public Producto comprarProducto(Moneda m, PrecioProducto opcion)
+    public void comprarProducto(Moneda m, PrecioProducto opcion)
             throws PagoInsuficienteException, PagoIncorrectoException, NoHayProductoException {
         {
             if (m == null) {
@@ -115,7 +117,7 @@ public class Expendedor {
                 monVu.addElemento(m);
                 throw new NoHayProductoException();
             } else {
-                return aux;
+                cajaRetiro = new DepositoRetiro(aux);
             }
         }
     }

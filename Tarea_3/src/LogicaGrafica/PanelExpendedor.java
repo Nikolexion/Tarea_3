@@ -1,6 +1,6 @@
 package LogicaGrafica;
 
-import Logica.Expendedor;
+import Logica.*;
 
 import javax.swing.*;
 import java.awt.*;
@@ -15,6 +15,7 @@ public class PanelExpendedor extends JPanel {
     private PanelDeposito dep;
     private Image imagenExpendedor;
     private Expendedor expendedor;
+    private Moneda m = new Moneda1000(); //Importante sacarla, solo es de prueba
     public Zona zonaCoca;
     public Zona zonaSprite;
     public Zona zonaFanta;
@@ -50,22 +51,37 @@ public class PanelExpendedor extends JPanel {
 
 
     }
-    public void click(MouseEvent e){
+    public void click(MouseEvent e) throws NoHayProductoException, PagoInsuficienteException, PagoIncorrectoException {
         if (zonaCoca.contienePunto(e.getX(), e.getY())) {
+            expendedor.comprarProducto(m, PrecioProducto.COCA);
             System.out.println("coca");
-            dep.sacarCoca();
+            if (expendedor.cajaRetiro.getProducto() != null){
+                dep.sacarCoca();
+            }
         } else if (zonaSprite.contienePunto(e.getX(), e.getY())) {
+            expendedor.comprarProducto(m, PrecioProducto.SPRITE);
             System.out.println("sprite");
-            dep.sacarSprite();
+            if (expendedor.cajaRetiro.getProducto() != null){
+                dep.sacarSprite();
+            }
         } else if (zonaFanta.contienePunto(e.getX(), e.getY())) {
+            expendedor.comprarProducto(m, PrecioProducto.FANTA);
             System.out.println("fanta");
-            dep.sacarFanta();
+            if (expendedor.cajaRetiro.getProducto() != null){
+                dep.sacarFanta();
+            }
         } else if (zonaSnikers.contienePunto(e.getX(), e.getY())) {
+            expendedor.comprarProducto(m, PrecioProducto.SNICKERS);
             System.out.println("snikers");
-            dep.sacarSnikers();
+            if (expendedor.cajaRetiro.getProducto() != null){
+                dep.sacarSnikers();
+            }
         } else if (zonaSuper8.contienePunto(e.getX(), e.getY())) {
+            expendedor.comprarProducto(m, PrecioProducto.SUPER8);
             System.out.println("super8");
-            dep.sacarSuper8();
+            if (expendedor.cajaRetiro.getProducto() != null){
+                dep.sacarSuper8();
+            }
         }
     }
 
