@@ -14,5 +14,20 @@ public class PanelDeposito {
         vistaProducto.paint(g);
 
     }
+    public void sacarCoca(){
+        vistaProducto.sacarCoca();
+    }
+    public void sacarSprite(){
+        vistaProducto.sacarSprite();
+    }
+    public void sacarFanta(){
+        vistaProducto.sacarFanta();
+    }
+    public void sacarSnikers(){
+        vistaProducto.sacarSnikers();
+    }
+    public void sacarSuper8(){
+        vistaProducto.sacarSuper8();
+    }
 
 }

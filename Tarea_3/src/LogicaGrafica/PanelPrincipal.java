@@ -27,6 +27,7 @@ public class PanelPrincipal extends JPanel {
             public void mouseClicked(MouseEvent e) {
                 exp.click(e);
                 com.click(e);
+                repaint();
             }
         });
     }

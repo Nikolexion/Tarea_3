@@ -20,6 +20,7 @@ public class PanelExpendedor extends JPanel {
     public Zona zonaFanta;
     public Zona zonaSnikers;
     public Zona zonaSuper8;
+    public Zona zonaFill;
     public PanelExpendedor(){
         dep = new PanelDeposito();
         expendedor = new Expendedor(7);
@@ -43,19 +44,28 @@ public class PanelExpendedor extends JPanel {
         zonaSuper8 = new Zona(411, 457, 46, 48, botonSuper8);
         add(zonaSuper8.getBoton());
 
+//        JButton buscaboton = new JButton();
+//        buscaboton.setBounds(500,150,20,100);
+//        this.add(buscaboton);
+
 
     }
     public void click(MouseEvent e){
         if (zonaCoca.contienePunto(e.getX(), e.getY())) {
             System.out.println("coca");
+            dep.sacarCoca();
         } else if (zonaSprite.contienePunto(e.getX(), e.getY())) {
             System.out.println("sprite");
+            dep.sacarSprite();
         } else if (zonaFanta.contienePunto(e.getX(), e.getY())) {
             System.out.println("fanta");
+            dep.sacarFanta();
         } else if (zonaSnikers.contienePunto(e.getX(), e.getY())) {
             System.out.println("snikers");
+            dep.sacarSnikers();
         } else if (zonaSuper8.contienePunto(e.getX(), e.getY())) {
             System.out.println("super8");
+            dep.sacarSuper8();
         }
     }
 
