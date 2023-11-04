@@ -1,5 +1,7 @@
 package LogicaGrafica;
 
+import Logica.Expendedor;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.MouseAdapter;
@@ -12,6 +14,7 @@ import java.awt.event.MouseEvent;
 public class PanelExpendedor extends JPanel {
     private PanelDeposito dep;
     private Image imagenExpendedor;
+    private Expendedor expendedor;
     public Zona zonaCoca;
     public Zona zonaSprite;
     public Zona zonaFanta;
@@ -19,6 +22,7 @@ public class PanelExpendedor extends JPanel {
     public Zona zonaSuper8;
     public PanelExpendedor(){
         dep = new PanelDeposito();
+        expendedor = new Expendedor(7);
         JButton botonCoca = new JButton("Zona Coca");
         JButton botonSprite = new JButton("Zona Sprite");
         JButton botonFanta = new JButton("Zona Fanta");
