@@ -5,15 +5,18 @@ import java.awt.*;
 
 public class PanelDeposito {
     private VistaProducto vistaProducto;
+    private VistaMoneda vistaMoneda;
 
     public PanelDeposito() {
         vistaProducto = new VistaProducto();
+        vistaMoneda = new VistaMoneda();
     }
 
     public void paint(Graphics g){
         vistaProducto.paint(g);
-
+        vistaMoneda.paint(g);
     }
+
     public void sacarCoca(){
         vistaProducto.sacarCoca();
     }

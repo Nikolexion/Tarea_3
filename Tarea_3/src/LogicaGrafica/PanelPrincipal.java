@@ -1,5 +1,9 @@
 package LogicaGrafica;
 
+import Logica.NoHayProductoException;
+import Logica.PagoIncorrectoException;
+import Logica.PagoInsuficienteException;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.MouseAdapter;
@@ -25,7 +29,15 @@ public class PanelPrincipal extends JPanel {
         addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {
-                exp.click(e);
+                try {
+                    exp.click(e);
+                } catch (NoHayProductoException ex) {
+                    throw new RuntimeException(ex);
+                } catch (PagoInsuficienteException ex) {
+                    throw new RuntimeException(ex);
+                } catch (PagoIncorrectoException ex) {
+                    throw new RuntimeException(ex);
+                }
                 com.click(e);
                 repaint();
             }
