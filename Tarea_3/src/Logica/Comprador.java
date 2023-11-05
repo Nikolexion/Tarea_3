@@ -28,12 +28,12 @@ public class Comprador{
     public Comprador(Moneda m, PrecioProducto opcion, Expendedor exp)
         throws NoHayProductoException, PagoInsuficienteException, PagoIncorrectoException {
 
-        Producto b = exp.comprarProducto(m, opcion);
+        exp.comprarProducto(m, opcion);
         if (m != null){
-            if (b == null){
+            if (exp.cajaRetiro == null){
                 sonido = null;
             } else {
-                sonido = b.comer();
+                sonido = exp.cajaRetiro.getProducto().comer();
             }
             Moneda aux;
             aux = exp.getVuelto();
@@ -46,6 +46,8 @@ public class Comprador{
             this.vuelto = 0;
         }
     }
+
+
 
     /** Método para obtener el vuelto calculado
      * @return int Vuelto calculado
@@ -60,4 +62,5 @@ public class Comprador{
     public String queBebiste(){
         return sonido;
     }
+
 }
