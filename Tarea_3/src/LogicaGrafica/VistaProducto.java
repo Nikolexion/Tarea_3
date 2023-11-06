@@ -36,6 +36,13 @@ public class VistaProducto implements ImageObserver {
         }
 
     }
+    public void llenar(){
+        cantidadCoca = 7;
+        cantidadFanta = 7;
+        cantidadSprite = 7;
+        cantidadSnikers = 7;
+        cantidadSuper8 = 7;
+    }
     public void sacarCoca(){
         if (cantidadCoca > 0) {
             cantidadCoca--;

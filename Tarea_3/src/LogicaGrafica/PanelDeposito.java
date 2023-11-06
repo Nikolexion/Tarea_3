@@ -17,6 +17,9 @@ public class PanelDeposito {
         vistaMoneda.paint(g);
     }
 
+    public void llenar(){
+        vistaProducto.llenar();
+    }
     public void sacarCoca(){
         vistaProducto.sacarCoca();
     }

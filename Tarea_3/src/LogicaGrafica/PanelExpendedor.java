@@ -30,6 +30,7 @@ public class PanelExpendedor extends JPanel {
         JButton botonFanta = new JButton("Zona Fanta");
         JButton botonSnikers = new JButton("Zona Snikers");
         JButton botonSuper8 = new JButton("Zona Super8");
+        JButton botonFill = new JButton("Zona Fill");
         zonaCoca = new Zona(411, 56, 46, 48, botonCoca);
         add(zonaCoca.getBoton());
 
@@ -45,43 +46,42 @@ public class PanelExpendedor extends JPanel {
         zonaSuper8 = new Zona(411, 457, 46, 48, botonSuper8);
         add(zonaSuper8.getBoton());
 
-//        JButton buscaboton = new JButton();
-//        buscaboton.setBounds(500,150,20,100);
-//        this.add(buscaboton);
+        zonaFill = new Zona(475,50,32,155,botonFill);
+        add(zonaFill.getBoton());
+
 
 
     }
     public void click(MouseEvent e) throws NoHayProductoException, PagoInsuficienteException, PagoIncorrectoException {
         if (zonaCoca.contienePunto(e.getX(), e.getY())) {
             expendedor.comprarProducto(m, PrecioProducto.COCA);
-            System.out.println("coca");
             if (expendedor.cajaRetiro.getProducto() != null){
                 dep.sacarCoca();
             }
         } else if (zonaSprite.contienePunto(e.getX(), e.getY())) {
             expendedor.comprarProducto(m, PrecioProducto.SPRITE);
-            System.out.println("sprite");
             if (expendedor.cajaRetiro.getProducto() != null){
                 dep.sacarSprite();
             }
         } else if (zonaFanta.contienePunto(e.getX(), e.getY())) {
             expendedor.comprarProducto(m, PrecioProducto.FANTA);
-            System.out.println("fanta");
             if (expendedor.cajaRetiro.getProducto() != null){
                 dep.sacarFanta();
             }
         } else if (zonaSnikers.contienePunto(e.getX(), e.getY())) {
             expendedor.comprarProducto(m, PrecioProducto.SNICKERS);
-            System.out.println("snikers");
             if (expendedor.cajaRetiro.getProducto() != null){
                 dep.sacarSnikers();
             }
         } else if (zonaSuper8.contienePunto(e.getX(), e.getY())) {
             expendedor.comprarProducto(m, PrecioProducto.SUPER8);
-            System.out.println("super8");
             if (expendedor.cajaRetiro.getProducto() != null){
                 dep.sacarSuper8();
             }
+        } else if (zonaFill.contienePunto(e.getX(),e.getY())) {
+            expendedor = new Expendedor(7);
+            dep.llenar();
+
         }
     }
 
