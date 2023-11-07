@@ -10,8 +10,18 @@ public class VistaProducto implements ImageObserver {
     private int cantidadSprite = 7;
     private int cantidadSnikers = 7;
     private int cantidadSuper8 = 7;
+    private boolean retiroCoca = false;
+    private boolean retiroSprite = false;
+    private boolean retiroFanta = false;
+    private boolean retiroSnikers = false;
+    private boolean retiroSuper8 = false;
 
-    private Image imagenExpendedor, imagenCoca, imagenFanta, imagenSprite, imagenSnikers, imagenSuper8;
+
+
+
+    private Image imagenCoca, imagenFanta, imagenSprite, imagenSnikers, imagenSuper8;
+    private Image imagenCocaRotada, imagenFantaRotada, imagenSpriteRotada, imagenSnikersRotada, imagenSuper8Rotada;
+
     public void paint(Graphics g){
         imagenCoca =  new ImageIcon("resources/cocacola.png").getImage();
         for (int i = 0; i < cantidadCoca; i++){
@@ -35,6 +45,29 @@ public class VistaProducto implements ImageObserver {
             g.drawImage(imagenSuper8,70+(45*i),445,58,70,this);
         }
 
+        imagenCocaRotada = new ImageIcon("resources/cocacolaRotada.png").getImage();
+        imagenSpriteRotada = new ImageIcon("resources/spriteRotada.png").getImage();
+        imagenFantaRotada = new ImageIcon("resources/fantaRotada.png").getImage();
+        imagenSnikersRotada = new ImageIcon("resources/snickersRotado.png").getImage();
+        imagenSuper8Rotada = new ImageIcon("resources/super8Rotado.png").getImage();
+
+        if (retiroCoca){
+            g.drawImage(imagenCocaRotada,214,570,64,40,this);
+        } else if (retiroSprite) {
+            g.drawImage(imagenSpriteRotada,214,550,65,78,this);
+        } else if (retiroFanta) {
+            g.drawImage(imagenFantaRotada,209,563,70,58,this);
+        } else if (retiroSnikers) {
+            g.drawImage(imagenSnikersRotada,214,568,70,58,this);
+        } else if (retiroSuper8) {
+            g.drawImage(imagenSuper8Rotada,214,568,70,58,this);
+        }
+        retiroCoca = false;
+        retiroSprite = false;
+        retiroFanta = false;
+        retiroSnikers = false;
+        retiroSuper8 = false;
+
     }
     public void llenar(){
         cantidadCoca = 7;
@@ -45,26 +78,31 @@ public class VistaProducto implements ImageObserver {
     }
     public void sacarCoca(){
         if (cantidadCoca > 0) {
+            retiroCoca = true;
             cantidadCoca--;
         }
     }
     public void sacarSprite(){
         if (cantidadSprite > 0) {
+            retiroSprite = true;
             cantidadSprite--;
         }
     }
     public void sacarFanta(){
         if (cantidadFanta > 0){
+            retiroFanta = true;
             cantidadFanta--;
         }
     }
     public void sacarSnikers(){
         if (cantidadSnikers > 0) {
+            retiroSnikers = true;
             cantidadSnikers--;
         }
     }
     public void sacarSuper8(){
         if (cantidadSuper8 > 0) {
+            retiroSuper8 = true;
             cantidadSuper8--;
         }
     }
