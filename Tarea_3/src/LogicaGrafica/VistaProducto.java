@@ -53,20 +53,15 @@ public class VistaProducto implements ImageObserver {
 
         if (retiroCoca){
             g.drawImage(imagenCocaRotada,214,570,64,40,this);
-        } else if (retiroSprite) {
+        } if (retiroSprite) {
             g.drawImage(imagenSpriteRotada,214,550,65,78,this);
-        } else if (retiroFanta) {
-            g.drawImage(imagenFantaRotada,209,563,70,58,this);
-        } else if (retiroSnikers) {
+        }  if (retiroFanta) {
+            g.drawImage(imagenFantaRotada,209,558,70,59,this);
+        }  if (retiroSnikers) {
             g.drawImage(imagenSnikersRotada,214,568,70,58,this);
-        } else if (retiroSuper8) {
+        }  if (retiroSuper8) {
             g.drawImage(imagenSuper8Rotada,214,568,70,58,this);
         }
-        retiroCoca = false;
-        retiroSprite = false;
-        retiroFanta = false;
-        retiroSnikers = false;
-        retiroSuper8 = false;
 
     }
     public void llenar(){
@@ -105,6 +100,13 @@ public class VistaProducto implements ImageObserver {
             retiroSuper8 = true;
             cantidadSuper8--;
         }
+    }
+    public void vaciarRetiro(){
+        retiroCoca = false;
+        retiroSprite = false;
+        retiroFanta = false;
+        retiroSnikers = false;
+        retiroSuper8 = false;
     }
 
     @Override
