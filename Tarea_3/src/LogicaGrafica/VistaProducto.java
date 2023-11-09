@@ -15,6 +15,8 @@ public class VistaProducto implements ImageObserver {
     private boolean retiroFanta = false;
     private boolean retiroSnikers = false;
     private boolean retiroSuper8 = false;
+    private boolean productoEnMovimiento = false;
+    private int ultimoRetiro;
 
 
 
@@ -63,6 +65,25 @@ public class VistaProducto implements ImageObserver {
             g.drawImage(imagenSuper8Rotada,214,568,70,58,this);
         }
 
+        if (productoEnMovimiento){
+            switch (ultimoRetiro){
+                case 1:
+                    g.drawImage(imagenCoca,620,257,40,64,this);
+                    break;
+                case 2:
+                    g.drawImage(imagenSprite,600,257,78,65,this);
+                    break;
+                case 3:
+                    g.drawImage(imagenFanta,610,257,59,70,this);
+                    break;
+                case 4:
+                    g.drawImage(imagenSnikers,610,257,58,70,this);
+                    break;
+                case 5:
+                    g.drawImage(imagenSuper8,610,257,58,70,this);
+                    break;
+            }
+        }
     }
     public void llenar(){
         cantidadCoca = 7;
@@ -75,38 +96,47 @@ public class VistaProducto implements ImageObserver {
         if (cantidadCoca > 0) {
             retiroCoca = true;
             cantidadCoca--;
+            ultimoRetiro = 1;
         }
     }
     public void sacarSprite(){
         if (cantidadSprite > 0) {
             retiroSprite = true;
             cantidadSprite--;
+            ultimoRetiro = 2;
         }
     }
     public void sacarFanta(){
         if (cantidadFanta > 0){
             retiroFanta = true;
             cantidadFanta--;
+            ultimoRetiro = 3;
         }
     }
     public void sacarSnikers(){
         if (cantidadSnikers > 0) {
             retiroSnikers = true;
             cantidadSnikers--;
+            ultimoRetiro = 4;
         }
     }
     public void sacarSuper8(){
         if (cantidadSuper8 > 0) {
             retiroSuper8 = true;
             cantidadSuper8--;
+            ultimoRetiro = 5;
         }
     }
     public void vaciarRetiro(){
+        productoEnMovimiento = true;
         retiroCoca = false;
         retiroSprite = false;
         retiroFanta = false;
         retiroSnikers = false;
         retiroSuper8 = false;
+    }
+    public void comerProducto(){
+        productoEnMovimiento = false;
     }
 
     @Override

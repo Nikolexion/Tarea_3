@@ -35,5 +35,11 @@ public class PanelDeposito {
     public void sacarSuper8(){
         vistaProducto.sacarSuper8();
     }
+    public void vaciarRetiro(){
+        vistaProducto.vaciarRetiro();
+    }
+    public void comerProducto(){
+        vistaProducto.comerProducto();
+    }
 
 }

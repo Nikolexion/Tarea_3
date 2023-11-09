@@ -12,16 +12,11 @@ import java.awt.event.MouseEvent;
 */
 
 public class PanelExpendedor extends JPanel {
-    private PanelDeposito dep;
+    public PanelDeposito dep;
     private Image imagenExpendedor;
-    private Expendedor expendedor;
+    public Expendedor expendedor;
     private Moneda m = new Moneda1000(); //Importante sacarla, solo es de prueba
-    public Zona zonaCoca;
-    public Zona zonaSprite;
-    public Zona zonaFanta;
-    public Zona zonaSnikers;
-    public Zona zonaSuper8;
-    public Zona zonaFill;
+    public Zona zonaCoca, zonaSprite,zonaFanta, zonaSnikers, zonaSuper8, zonaFill;
     public PanelExpendedor(){
         dep = new PanelDeposito();
         expendedor = new Expendedor(7);
@@ -31,6 +26,7 @@ public class PanelExpendedor extends JPanel {
         JButton botonSnikers = new JButton("Zona Snikers");
         JButton botonSuper8 = new JButton("Zona Super8");
         JButton botonFill = new JButton("Zona Fill");
+
         zonaCoca = new Zona(411, 56, 46, 48, botonCoca);
         add(zonaCoca.getBoton());
 
@@ -48,7 +44,6 @@ public class PanelExpendedor extends JPanel {
 
         zonaFill = new Zona(475,50,32,155,botonFill);
         add(zonaFill.getBoton());
-
 
 
     }

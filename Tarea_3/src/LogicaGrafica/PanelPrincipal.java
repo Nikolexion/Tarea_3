@@ -15,7 +15,7 @@ public class PanelPrincipal extends JPanel {
 
     public PanelPrincipal(){
         exp = new PanelExpendedor();
-        com = new PanelComprador();
+        com = new PanelComprador(exp);
         this.setSize(800, 600);
 
         this.setBackground(Color.WHITE);
@@ -46,8 +46,8 @@ public class PanelPrincipal extends JPanel {
     @Override
     public void paint(Graphics g){
         super.paint(g);
-        exp.paint(g);
         com.paint(g);
+        exp.paint(g);
     }
 
 }
