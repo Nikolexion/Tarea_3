@@ -20,7 +20,7 @@ public class Expendedor {
     /**
      * Propiedades Depósito para guardar las monedas
      */
-    private Deposito<Moneda> monVu;
+    private Deposito<Moneda> monVu, depMon;
 
     /**
      * Constructor de Expendedor que inicializa los depósitos con el parámetro numProductos y los llena según
@@ -37,6 +37,7 @@ public class Expendedor {
         super8 = new Deposito<>();
         monVu = new Deposito<>();
         cajaRetiro = new DepositoRetiro(null);
+        depMon = new Deposito<>();
 
         for (int i = 0; i < numProductos; i++) {
             coca.addElemento(new CocaCola(100 + i));
@@ -118,6 +119,7 @@ public class Expendedor {
                 throw new NoHayProductoException();
             } else {
                 cajaRetiro = new DepositoRetiro(aux);
+                depMon.addElemento(m);
             }
         }
     }
