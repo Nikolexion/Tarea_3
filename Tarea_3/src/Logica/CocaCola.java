@@ -9,8 +9,13 @@ public class CocaCola extends Bebida{
     /** Constructor para inicializar la Serie
      * @param serie
      */
+    private int serie;
     public CocaCola(int serie){
         super(serie);
+        this.serie = serie;
+    }
+    public int getSerie(){
+        return serie;
     }
 
     /**

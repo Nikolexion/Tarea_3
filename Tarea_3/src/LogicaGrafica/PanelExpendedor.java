@@ -52,26 +52,31 @@ public class PanelExpendedor extends JPanel {
             expendedor.comprarProducto(m, PrecioProducto.COCA);
             if (expendedor.cajaRetiro.getProducto() != null){
                 dep.sacarCoca();
+                System.out.println(expendedor.cajaRetiro.getSerie());
             }
         } else if (zonaSprite.contienePunto(e.getX(), e.getY())) {
             expendedor.comprarProducto(m, PrecioProducto.SPRITE);
             if (expendedor.cajaRetiro.getProducto() != null){
                 dep.sacarSprite();
+                System.out.println(expendedor.cajaRetiro.getSerie());
             }
         } else if (zonaFanta.contienePunto(e.getX(), e.getY())) {
             expendedor.comprarProducto(m, PrecioProducto.FANTA);
             if (expendedor.cajaRetiro.getProducto() != null){
                 dep.sacarFanta();
+                System.out.println(expendedor.cajaRetiro.getSerie());
             }
         } else if (zonaSnikers.contienePunto(e.getX(), e.getY())) {
             expendedor.comprarProducto(m, PrecioProducto.SNICKERS);
             if (expendedor.cajaRetiro.getProducto() != null){
                 dep.sacarSnikers();
+                System.out.println(expendedor.cajaRetiro.getSerie());
             }
         } else if (zonaSuper8.contienePunto(e.getX(), e.getY())) {
             expendedor.comprarProducto(m, PrecioProducto.SUPER8);
             if (expendedor.cajaRetiro.getProducto() != null){
                 dep.sacarSuper8();
+                System.out.println(expendedor.cajaRetiro.getSerie());
             }
         } else if (zonaFill.contienePunto(e.getX(),e.getY())) {
             expendedor = new Expendedor(7);

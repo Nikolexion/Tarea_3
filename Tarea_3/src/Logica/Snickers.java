@@ -7,9 +7,14 @@ package Logica;
 
  public class Snickers extends Dulce{
     /** Constructor vacío de la clase */
-    public Snickers() {
+    private int serie;
+    public Snickers(int serie) {
+        super(serie);
+        this.serie = serie;
     }
-
+    public int getSerie(){
+        return this.serie;
+    }
     /**
      * Método para retornar un String con el "sonido" del snickers
      * @return String "snickers"

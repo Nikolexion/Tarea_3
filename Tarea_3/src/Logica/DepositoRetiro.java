@@ -13,4 +13,7 @@ public class DepositoRetiro {
             return producto;
         }
     }
+    public int getSerie(){
+        return producto.getSerie();
+    }
 }

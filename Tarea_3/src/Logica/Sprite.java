@@ -9,10 +9,14 @@ public class Sprite extends Bebida{
     /** Constructor para inicializar la Serie
      * @param serie
      */
+    private int serie;
     public Sprite(int serie){
         super(serie);
+        this.serie = serie;
     }
-
+    public int getSerie(){
+        return this.serie;
+    }
     /**
      * Método para retornar un String con el "sonido" de la sprite
      * @return String "sprite"

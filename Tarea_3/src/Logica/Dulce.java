@@ -7,7 +7,12 @@ package Logica;
 
 public abstract class Dulce extends Producto{
     /** Constructor vacío de la clase */
-    public Dulce() {
+    int serie;
+    public Dulce(int serie) {
+        this.serie = serie;
+    }
+    public int getSerie(){
+        return this.serie;
     }
 
     /**

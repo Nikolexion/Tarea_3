@@ -11,4 +11,5 @@ public abstract class Producto {
      * @return String de producto consumido
      */
     public abstract String comer();
+    public abstract int getSerie();
 }
