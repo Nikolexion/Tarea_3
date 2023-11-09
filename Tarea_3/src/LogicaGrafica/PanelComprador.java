@@ -16,6 +16,7 @@ public class PanelComprador extends JPanel {
 
     public PanelComprador(PanelExpendedor exp) {
         this.exp = exp;
+        //comprador = new Comprador();
         JButton botonRetiro = new JButton();
         zonaRetiro = new Zona(75,552,319,79,botonRetiro);
         add(zonaRetiro.getBoton());
@@ -52,21 +53,25 @@ public class PanelComprador extends JPanel {
         if (zonaMoneda100.contienePunto(e.getX(),e.getY())){
             choiceMoneda100++;
             Moneda m = new Moneda100(100+choiceMoneda100);
+            System.out.println(m.getSerie());
             exp.setMoneda(m);
         }
         if (zonaMoneda500.contienePunto(e.getX(),e.getY())){
             choiceMoneda500++;
             Moneda m = new Moneda500(200+choiceMoneda500);
+            System.out.println(m.getSerie());
             exp.setMoneda(m);
         }
         if (zonaMoneda1000.contienePunto(e.getX(),e.getY())){
             choiceMoneda1000++;
             Moneda m = new Moneda1000(300+choiceMoneda1000);
+            System.out.println(m.getSerie());
             exp.setMoneda(m);
         }
         if (zonaMoneda1500.contienePunto(e.getX(),e.getY())){
             choiceMoneda1500++;
             Moneda m = new Moneda1500(400+choiceMoneda1500);
+            System.out.println(m.getSerie());
             exp.setMoneda(m);
         }
     }
