@@ -6,8 +6,8 @@ package Logica;
  */
 public class Moneda100 extends Moneda{
     /** Constructor con super() para llegar a la superclase */
-    public Moneda100() {
-        super();
+    public Moneda100(int serie) {
+        super(serie);
     }
 
     /** Método para obtener el valor de la moneda como número entero

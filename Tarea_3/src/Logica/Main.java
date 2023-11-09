@@ -11,19 +11,19 @@ public class Main {
 
         System.out.println("---------con dinero SUFICIENTE para el precio---------");
         try {
-            m = new Moneda1000();
+            m = new Moneda1000(1);
             c = new Comprador(m, PrecioProducto.COCA, exp);
             System.out.println(c.queBebiste() + ", " + c.cuantoVuelto());
-            m = new Moneda1000();
+            m = new Moneda1000(1);
             c = new Comprador(m, PrecioProducto.SPRITE, exp);
             System.out.println(c.queBebiste() + ", " + c.cuantoVuelto());
-            m = new Moneda1000();
+            m = new Moneda1000(1);
             c = new Comprador(m, PrecioProducto.FANTA, exp);
             System.out.println(c.queBebiste() + ", " + c.cuantoVuelto());
-            m = new Moneda1000();
+            m = new Moneda1000(1);
             c = new Comprador(m, PrecioProducto.SNICKERS, exp);
             System.out.println(c.queBebiste() + ", " + c.cuantoVuelto());
-            m = new Moneda1000();
+            m = new Moneda1000(1);
             c = new Comprador(m, PrecioProducto.SUPER8, exp);
             System.out.println(c.queBebiste() + ", " + c.cuantoVuelto());
         } catch (PagoIncorrectoException exception) {
@@ -65,19 +65,19 @@ public class Main {
 
         System.out.println("---------con MENOS dinero que el precio---------");
         try {
-            m = new Moneda500();
+            m = new Moneda500(1);
             c = new Comprador(m, PrecioProducto.COCA, exp);
             System.out.println(c.queBebiste() + ", " + c.cuantoVuelto());
-            m = new Moneda500();
+            m = new Moneda500(1);
             c = new Comprador(m, PrecioProducto.SPRITE, exp);
             System.out.println(c.queBebiste() + ", " + c.cuantoVuelto());
-            m = new Moneda500();
+            m = new Moneda500(1);
             c = new Comprador(m, PrecioProducto.FANTA, exp);
             System.out.println(c.queBebiste() + ", " + c.cuantoVuelto());
-            m = new Moneda100();
+            m = new Moneda100(1);
             c = new Comprador(m, PrecioProducto.SNICKERS, exp);
             System.out.println(c.queBebiste() + ", " + c.cuantoVuelto());
-            m = new Moneda100();
+            m = new Moneda100(1);
             c = new Comprador(m, PrecioProducto.SUPER8, exp);
             System.out.println(c.queBebiste() + ", " + c.cuantoVuelto());
         } catch (PagoInsuficienteException exception){
@@ -89,19 +89,19 @@ public class Main {
         System.out.println("---------Deposito VACIO---------");
         try {
             Expendedor exp1 = new Expendedor(0);
-            m = new Moneda1000();
+            m = new Moneda1000(1);
             c = new Comprador(m, PrecioProducto.COCA, exp1);
             System.out.println(c.queBebiste() + ", " + c.cuantoVuelto());
-            m = new Moneda1000();
+            m = new Moneda1000(1);
             c = new Comprador(m, PrecioProducto.SPRITE, exp1);
             System.out.println(c.queBebiste() + ", " + c.cuantoVuelto());
-            m = new Moneda1000();
+            m = new Moneda1000(1);
             c = new Comprador(m, PrecioProducto.FANTA, exp1);
             System.out.println(c.queBebiste() + ", " + c.cuantoVuelto());
-            m = new Moneda1000();
+            m = new Moneda1000(1);
             c = new Comprador(m, PrecioProducto.SNICKERS, exp1);
             System.out.println(c.queBebiste() + ", " + c.cuantoVuelto());
-            m = new Moneda1000();
+            m = new Moneda1000(1);
             c = new Comprador(m, PrecioProducto.SUPER8, exp1);
             System.out.println(c.queBebiste() + ", " + c.cuantoVuelto());
         } catch (NoHayProductoException exception){
@@ -110,11 +110,11 @@ public class Main {
 
         //---------------------------------------Prueba de toString Moneda----------------------------------------------
 
-        Moneda m1 = new Moneda100();
-        Moneda m2 = new Moneda500();
-        Moneda m3 = new Moneda1000();
-        Moneda m4 = new Moneda1500();
-        Moneda m5 = new Moneda1500();
+        Moneda m1 = new Moneda100(1);
+        Moneda m2 = new Moneda500(1);
+        Moneda m3 = new Moneda1000(1);
+        Moneda m4 = new Moneda1500(1);
+        Moneda m5 = new Moneda1500(1);
 
         System.out.println("---------Prueba de Moneda toString---------");
         System.out.println(m1.toString());

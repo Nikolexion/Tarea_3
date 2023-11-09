@@ -15,7 +15,7 @@ public class PanelExpendedor extends JPanel {
     public PanelDeposito dep;
     private Image imagenExpendedor;
     public Expendedor expendedor;
-    private Moneda m = new Moneda1000(); //Importante sacarla, solo es de prueba
+    private Moneda m;
     public Zona zonaCoca, zonaSprite,zonaFanta, zonaSnikers, zonaSuper8, zonaFill;
     public PanelExpendedor(){
         dep = new PanelDeposito();
@@ -86,5 +86,9 @@ public class PanelExpendedor extends JPanel {
         g.drawImage(imagenExpendedor,30,10,512,700,this);
         dep.paint(g);
 
+    }
+
+    public void setMoneda(Moneda moneda){
+        this.m = moneda;
     }
 }

@@ -11,13 +11,13 @@ public abstract class Moneda implements Comparable<Moneda> {
     protected int serie;
 
     /** Constructor vacío de la clase */
-    public Moneda() {
-
+    public Moneda(int serie) {
+        this.serie = serie;
     }
 
     /** Método para obtener la serie de la moneda actual */
-    public Moneda getSerie(){
-        return this;
+    public int getSerie(){
+        return serie;
     }
 
     /** Método abstracto para obtener en las subclases el valor de la moneda actual */

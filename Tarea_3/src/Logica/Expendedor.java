@@ -82,31 +82,31 @@ public class Expendedor {
                 case COCA:
                     aux = coca.getElemento();
                     for (int i = 0; i < numVueltoMonedas100; i++) {
-                        monVu.addElemento(new Moneda100());
+                        monVu.addElemento(new Moneda100(100+i));
                     }
                     break;
                 case SPRITE:
                     aux = sprite.getElemento();
                     for (int i = 0; i < numVueltoMonedas100; i++) {
-                        monVu.addElemento(new Moneda100());
+                        monVu.addElemento(new Moneda100(100+i));
                     }
                     break;
                 case FANTA:
                     aux = fanta.getElemento();
                     for (int i = 0; i < numVueltoMonedas100; i++) {
-                        monVu.addElemento(new Moneda100());
+                        monVu.addElemento(new Moneda100(100+i));
                     }
                     break;
                 case SNICKERS:
                     aux = snickers.getElemento();
                     for (int i = 0; i < numVueltoMonedas100; i++) {
-                        monVu.addElemento(new Moneda100());
+                        monVu.addElemento(new Moneda100(100+i));
                     }
                     break;
                 case SUPER8:
                     aux = super8.getElemento();
                     for (int i = 0; i < numVueltoMonedas100; i++) {
-                        monVu.addElemento(new Moneda100());
+                        monVu.addElemento(new Moneda100(100+i));
                     }
                     break;
                 default:
