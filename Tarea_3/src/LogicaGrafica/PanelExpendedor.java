@@ -47,6 +47,7 @@ public class PanelExpendedor extends JPanel {
         add(zonaFill.getBoton());
 
 
+
     }
     /**
      * @param e Recibe un MouseEvent para administrar las interacciones con el PanelExpendedor

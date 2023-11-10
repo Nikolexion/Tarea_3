@@ -15,7 +15,7 @@ import java.awt.event.MouseEvent;
 
 public class PanelComprador extends JPanel {
     private Image image;
-    private Zona zonaRetiro, zonaComer, zonaMoneda100, zonaMoneda500, zonaMoneda1000, zonaMoneda1500;
+    private Zona zonaRetiro, zonaComer, zonaMoneda100, zonaMoneda500, zonaMoneda1000, zonaMoneda1500, zonaCash;
     private int choiceMoneda100, choiceMoneda500, choiceMoneda1000, choiceMoneda1500;
     private Comprador comprador;
     private Moneda m;
@@ -52,30 +52,38 @@ public class PanelComprador extends JPanel {
         JButton botonMoneda1500 = new JButton();
         zonaMoneda1500 = new Zona(1146, 150, 100, 99,botonMoneda1500);
         add(zonaMoneda1500.getBoton());
+
+        JButton botonCash = new JButton();
+        zonaCash = new Zona(425,551,80,80,botonCash);
+        add(zonaCash.getBoton());
     }
 /**
  * @param e Recibe un MouseEvent para poder administrar las interacciones con PanelComprador
  * */
     public void click(MouseEvent e) throws NoHayProductoException, PagoInsuficienteException, PagoIncorrectoException {
         if (zonaMoneda100.contienePunto(e.getX(),e.getY())){
+            exp.dep.setVueltoFalse();
             choiceMoneda100++;
             m = new Moneda100(100+choiceMoneda100);
             System.out.println(m.getSerie());
             exp.setMoneda(m);
         }
         else if (zonaMoneda500.contienePunto(e.getX(),e.getY())){
+            exp.dep.setVueltoFalse();
             choiceMoneda500++;
             m = new Moneda500(200+choiceMoneda500);
             System.out.println(m.getSerie());
             exp.setMoneda(m);
         }
         else if (zonaMoneda1000.contienePunto(e.getX(),e.getY())){
+            exp.dep.setVueltoFalse();
             choiceMoneda1000++;
             m = new Moneda1000(300+choiceMoneda1000);
             System.out.println(m.getSerie());
             exp.setMoneda(m);
         }
         else if (zonaMoneda1500.contienePunto(e.getX(),e.getY())){
+            exp.dep.setVueltoFalse();
             choiceMoneda1500++;
             m = new Moneda1500(400+choiceMoneda1500);
             System.out.println(m.getSerie());
@@ -114,6 +122,17 @@ public class PanelComprador extends JPanel {
         if (zonaComer.contienePunto(e.getX(),e.getY())){
             exp.dep.comerProducto();
         }
+        int cuantasMonedas = comprador.cuantoVuelto() / 100;
+        if (comprador.cuantoVuelto() != 0){
+            if (zonaCash.contienePunto(e.getX(),e.getY())){
+                for (int i = 0; i < cuantasMonedas; i++){
+                    exp.dep.vueltoMonedas(cuantasMonedas);
+                }
+            }
+        } else {
+            comprador.setVuelto(0);
+        }
+
     }
     public void paint(Graphics g) {
         super.paint(g);

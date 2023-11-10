@@ -72,4 +72,8 @@ public class Comprador{
     public Producto getProducto() {
         return producto;
     }
+
+    public void setVuelto(int vuelto) {
+        this.vuelto = vuelto;
+    }
 }

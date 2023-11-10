@@ -11,6 +11,8 @@ import java.awt.image.ImageObserver;
 
 public class VistaMoneda implements ImageObserver {
     private Image imagenMoneda100, imagenMoneda500, imagenMoneda1000, imagenMoneda1500;
+    private int cuantasMonedas;
+    private boolean vuelto;
     public void paint(Graphics g){
 
         g.setColor(Color.PINK);
@@ -32,6 +34,13 @@ public class VistaMoneda implements ImageObserver {
         g.drawString("Snickers-----> $600", 1000, 410);
         g.drawString("Super8-------> $500", 1000, 430);
 
+        g.setColor(Color.YELLOW);
+        g.fillRect(800, 500, 500, 160);
+        g.setColor(Color.orange);
+        g.drawRect(800,500,500,160);
+        g.setColor(Color.BLACK);
+        g.drawString("Tu vuelto", 1030, 520);
+
         imagenMoneda100 =  new ImageIcon("resources/Moneda100.png").getImage();
         g.drawString("$100", 882, 145);
         g.drawImage(imagenMoneda100,846,150,100,99,this);
@@ -48,6 +57,73 @@ public class VistaMoneda implements ImageObserver {
         imagenMoneda1500 = new ImageIcon("resources/Moneda1500.png").getImage();
         g.drawImage(imagenMoneda1500,1146,150,100,99,this);
 
+        if (vuelto){
+            switch (cuantasMonedas){
+                case 1:
+                    imagenMoneda100 =  new ImageIcon("resources/Moneda100.png").getImage();
+                    g.drawImage(imagenMoneda100,805,550,100,99,this);
+                    break;
+                case 2:
+                    imagenMoneda100 =  new ImageIcon("resources/Moneda100.png").getImage();
+                    g.drawImage(imagenMoneda100,805,550,100,99,this);
+
+                    imagenMoneda100 =  new ImageIcon("resources/Moneda100.png").getImage();
+                    g.drawImage(imagenMoneda100,905,550,100,99,this);
+                    break;
+                case 3:
+                    imagenMoneda100 =  new ImageIcon("resources/Moneda100.png").getImage();
+                    g.drawImage(imagenMoneda100,805,550,100,99,this);
+
+                    imagenMoneda100 =  new ImageIcon("resources/Moneda100.png").getImage();
+                    g.drawImage(imagenMoneda100,905,550,100,99,this);
+
+                    imagenMoneda100 =  new ImageIcon("resources/Moneda100.png").getImage();
+                    g.drawImage(imagenMoneda100,1005,550,100,99,this);
+                    break;
+                case 4:
+                    imagenMoneda100 =  new ImageIcon("resources/Moneda100.png").getImage();
+                    g.drawImage(imagenMoneda100,805,550,100,99,this);
+
+                    imagenMoneda100 =  new ImageIcon("resources/Moneda100.png").getImage();
+                    g.drawImage(imagenMoneda100,905,550,100,99,this);
+
+                    imagenMoneda100 =  new ImageIcon("resources/Moneda100.png").getImage();
+                    g.drawImage(imagenMoneda100,1005,550,100,99,this);
+
+                    imagenMoneda100 =  new ImageIcon("resources/Moneda100.png").getImage();
+                    g.drawImage(imagenMoneda100,1105,550,100,99,this);
+                    break;
+                case 5:
+                    imagenMoneda100 =  new ImageIcon("resources/Moneda100.png").getImage();
+                    g.drawImage(imagenMoneda100,805,550,100,99,this);
+                    imagenMoneda100 =  new ImageIcon("resources/Moneda100.png").getImage();
+                    g.drawImage(imagenMoneda100,905,550,100,99,this);
+                    imagenMoneda100 =  new ImageIcon("resources/Moneda100.png").getImage();
+                    g.drawImage(imagenMoneda100,1005,550,100,99,this);
+                    imagenMoneda100 =  new ImageIcon("resources/Moneda100.png").getImage();
+                    g.drawImage(imagenMoneda100,1105,550,100,99,this);
+                    imagenMoneda100 =  new ImageIcon("resources/Moneda100.png").getImage();
+                    g.drawImage(imagenMoneda100,1205,550,100,99,this);
+                    break;
+                default:
+                    break;
+            }
+            disminuyeMoneda();
+        }
+    }
+    public void vueltoMonedas(int cuantasMonedas){
+        vuelto = true;
+        this.cuantasMonedas = cuantasMonedas;
+    }
+    public void disminuyeMoneda(){
+        this.cuantasMonedas--;
+        if (cuantasMonedas == 0){
+            vuelto = false;
+        }
+    }
+    public void setVueltoFalse(){
+        vuelto = false;
+        cuantasMonedas = 0;
     }
     @Override
     public boolean imageUpdate(Image img, int infoflags, int x, int y, int width, int height) {

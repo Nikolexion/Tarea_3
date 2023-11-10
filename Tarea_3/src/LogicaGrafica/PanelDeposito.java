@@ -46,5 +46,11 @@ public class PanelDeposito {
     public void comerProducto(){
         vistaProducto.comerProducto();
     }
+    public void vueltoMonedas(int n){
+        vistaMoneda.vueltoMonedas(n);
+    }
+    public void setVueltoFalse(){
+        vistaMoneda.setVueltoFalse();
+    }
 
 }
