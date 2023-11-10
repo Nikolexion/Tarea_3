@@ -2,7 +2,12 @@ package LogicaGrafica;
 
 import javax.swing.*;
 import java.awt.*;
-
+/**
+ * Clase que se encarga de conectar al PanelExpendedor con la VistaProducto y VistaMoneda
+ * erutiliza las funciones hechas por VistaProducto
+ * @author lulunkaii
+ * @author Nikolexion
+ * */
 public class PanelDeposito {
     private VistaProducto vistaProducto;
     private VistaMoneda vistaMoneda;

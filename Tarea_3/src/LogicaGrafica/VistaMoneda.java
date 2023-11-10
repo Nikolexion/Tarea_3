@@ -3,6 +3,11 @@ package LogicaGrafica;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.image.ImageObserver;
+/**
+ * Clase que se encarga de la representación gráfica de las Monedas
+ * @author lulunkaii
+ * @author Nikolexion
+ * */
 
 public class VistaMoneda implements ImageObserver {
     private Image imagenMoneda100, imagenMoneda500, imagenMoneda1000, imagenMoneda1500;

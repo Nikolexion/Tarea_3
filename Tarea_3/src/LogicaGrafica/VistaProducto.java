@@ -3,6 +3,12 @@ package LogicaGrafica;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.image.ImageObserver;
+/**
+ * Clase que se encarga de la representación de todos los productos dentro de la
+ * máquina expendedora, administra las posiciones de los mismos en todo momento
+ * @author lulunkaii
+ * @author Nikolexion
+ * */
 
 public class VistaProducto implements ImageObserver {
     private int cantidadCoca = 7;

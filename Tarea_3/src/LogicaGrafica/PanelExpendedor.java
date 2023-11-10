@@ -7,6 +7,7 @@ import java.awt.*;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 /**Clase que configura el panel que contiene todas las funcionalidades del expendedor
+ * extendiendo la clase JPanel y utilizando varias de sus funciones
  * @author lulunkaii
  * @author Nikolexion
 */
@@ -47,6 +48,9 @@ public class PanelExpendedor extends JPanel {
 
 
     }
+    /**
+     * @param e Recibe un MouseEvent para administrar las interacciones con el PanelExpendedor
+     * */
     public void click(MouseEvent e) throws NoHayProductoException, PagoInsuficienteException, PagoIncorrectoException {
         if (zonaCoca.contienePunto(e.getX(), e.getY())) {
             if (expendedor.cajaRetiro.getProducto() != null){

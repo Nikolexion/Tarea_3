@@ -6,6 +6,12 @@ import Logica.Producto;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.MouseEvent;
+/**
+ * Clase que se encarga de toda la parte gráfica con respecto al Comprador
+ * extendiendo la clase Jpanel y ocupando varias sus funciones
+ * @author lulunkaii
+ * @author Nikolexion
+ * */
 
 public class PanelComprador extends JPanel {
     private Image image;
@@ -16,7 +22,9 @@ public class PanelComprador extends JPanel {
     private PanelExpendedor exp;
     private PrecioProducto opc;
     private boolean yaCompro;
-
+/**
+ * @param exp Instancia de PanelExpendedor
+ * */
     public PanelComprador(PanelExpendedor exp) {
         this.exp = exp;
         //comprador = new Comprador();
@@ -45,7 +53,9 @@ public class PanelComprador extends JPanel {
         zonaMoneda1500 = new Zona(1146, 150, 100, 99,botonMoneda1500);
         add(zonaMoneda1500.getBoton());
     }
-
+/**
+ * @param e Recibe un MouseEvent para poder administrar las interacciones con PanelComprador
+ * */
     public void click(MouseEvent e) throws NoHayProductoException, PagoInsuficienteException, PagoIncorrectoException {
         if (zonaMoneda100.contienePunto(e.getX(),e.getY())){
             choiceMoneda100++;

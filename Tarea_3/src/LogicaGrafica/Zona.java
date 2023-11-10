@@ -1,6 +1,13 @@
 package LogicaGrafica;
 
 import javax.swing.*;
+/**
+ * Clase creada para facilitar la administración de los clicks del usuario
+ * delimitando zonas cuadradas que al ser llamadas pueden decir si una interacción
+ * occurió dentro suyo
+ * @author lulunkaii
+ * @author Nikolexion
+ * */
 
 public class Zona {
     private int x;

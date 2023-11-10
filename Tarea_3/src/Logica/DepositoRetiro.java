@@ -1,5 +1,9 @@
 package Logica;
-
+/**
+ * Clase hecha para poder guardar el producto que está esperando a ser retirado
+ * @author lulunkaii
+ * @author Nikolexion
+ * */
 public class DepositoRetiro {
     private Producto producto;
     public DepositoRetiro(Producto producto){

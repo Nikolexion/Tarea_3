@@ -8,6 +8,12 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+/**Clase que administra a PanelComprador y PanelExpendedor, además de administrar los clicks
+ * hechos por el usuario y delegarlos a PanelComprador y PanelExpendedor y además se encarga
+ * de dibujar en pantalla todo lo hecho por las clases anteriomente mencionadas
+ * @author lulunkaii
+ * @author Nikolexion
+ * */
 
 public class PanelPrincipal extends JPanel {
     private PanelComprador com;
