@@ -2,14 +2,14 @@ package Logica;
 
 public class Main {
     public static void main(String[] args)
-        throws NoHayProductoException, PagoInsuficienteException, PagoIncorrectoException {
+            throws NoHayProductoException, PagoInsuficienteException, PagoIncorrectoException {
         Expendedor exp = new Expendedor(6);
         Moneda m = null;
         Comprador c = null;
 
         //-------------------------------------con dinero SUFICIENTE para el precio-------------------------------------
 
-        System.out.println("---------con dinero SUFICIENTE para el precio---------");
+       /* System.out.println("---------con dinero SUFICIENTE para el precio---------");
         try {
             m = new Moneda1000(1);
             c = new Comprador(m, PrecioProducto.COCA, exp);
@@ -121,5 +121,9 @@ public class Main {
         System.out.println(m2.toString());
         System.out.println(m3.toString());
         System.out.println(m4.toString());
+        */
+
     }
+
+
 }

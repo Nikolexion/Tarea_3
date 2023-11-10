@@ -16,4 +16,7 @@ public class DepositoRetiro {
     public int getSerie(){
         return producto.getSerie();
     }
+    public void setProducto(Producto producto) {
+        this.producto = producto;
+    }
 }

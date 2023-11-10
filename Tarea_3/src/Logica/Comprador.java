@@ -15,6 +15,8 @@ public class Comprador{
     /** Propiedad vuelto almacena el dinero a retornar para el usuario */
     private int vuelto;
 
+    private Producto producto;
+
     /**
      * Constructor que efectúa la compra de un producto en el expendedor que se ingresa como parámetro, calcula el
      * vuelto en monedas de 100 si la compra es efectiva y simula el que el Comprador consume el Producto.
@@ -26,15 +28,17 @@ public class Comprador{
      * @throws PagoIncorrectoException Error por si la moneda es nula o inválida
      */
     public Comprador(Moneda m, PrecioProducto opcion, Expendedor exp)
-        throws NoHayProductoException, PagoInsuficienteException, PagoIncorrectoException {
-
+            throws NoHayProductoException, PagoInsuficienteException, PagoIncorrectoException {
+        this.producto = exp.cajaRetiro.getProducto();
         exp.comprarProducto(m, opcion);
         if (m != null){
-            if (exp.cajaRetiro == null){
+            /*if (exp.cajaRetiro == null){
                 sonido = null;
             } else {
                 sonido = exp.cajaRetiro.getProducto().comer();
             }
+
+             */
             Moneda aux;
             aux = exp.getVuelto();
             while (aux != null){
@@ -59,8 +63,13 @@ public class Comprador{
     /** Método para obtener el sonido al consumir el producto
      * @return String con el sonido del producto comprado
      */
-    public String queBebiste(){
+    /*public String queBebiste(){
         return sonido;
     }
 
+     */
+
+    public Producto getProducto() {
+        return producto;
+    }
 }

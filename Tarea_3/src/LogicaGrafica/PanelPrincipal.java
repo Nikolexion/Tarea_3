@@ -38,7 +38,15 @@ public class PanelPrincipal extends JPanel {
                 } catch (PagoIncorrectoException ex) {
                     throw new RuntimeException(ex);
                 }
-                com.click(e);
+                try {
+                    com.click(e);
+                } catch (NoHayProductoException ex) {
+                    throw new RuntimeException(ex);
+                } catch (PagoInsuficienteException ex) {
+                    throw new RuntimeException(ex);
+                } catch (PagoIncorrectoException ex) {
+                    throw new RuntimeException(ex);
+                }
                 repaint();
             }
         });

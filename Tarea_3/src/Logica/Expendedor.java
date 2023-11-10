@@ -45,8 +45,8 @@ public class Expendedor {
             fanta.addElemento(new Fanta(300 + i));
         }
         for (int i = 0; i < numProductos; i++) {
-            snickers.addElemento(new Snickers(400 + i));
-            super8.addElemento(new Super8(500 + i));
+            snickers.addElemento(new Snickers(400+i));
+            super8.addElemento(new Super8(500+i));
         }
     }
 

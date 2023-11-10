@@ -12,7 +12,10 @@ public class PanelComprador extends JPanel {
     private Zona zonaRetiro, zonaComer, zonaMoneda100, zonaMoneda500, zonaMoneda1000, zonaMoneda1500;
     private int choiceMoneda100, choiceMoneda500, choiceMoneda1000, choiceMoneda1500;
     private Comprador comprador;
+    private Moneda m;
     private PanelExpendedor exp;
+    private PrecioProducto opc;
+    private boolean yaCompro;
 
     public PanelComprador(PanelExpendedor exp) {
         this.exp = exp;
@@ -43,36 +46,63 @@ public class PanelComprador extends JPanel {
         add(zonaMoneda1500.getBoton());
     }
 
-    public void click(MouseEvent e){
-        if (zonaRetiro.contienePunto(e.getX(),e.getY())){
+    public void click(MouseEvent e) throws NoHayProductoException, PagoInsuficienteException, PagoIncorrectoException {
+        if (zonaMoneda100.contienePunto(e.getX(),e.getY())){
+            choiceMoneda100++;
+            m = new Moneda100(100+choiceMoneda100);
+            System.out.println(m.getSerie());
+            exp.setMoneda(m);
+        }
+        else if (zonaMoneda500.contienePunto(e.getX(),e.getY())){
+            choiceMoneda500++;
+            m = new Moneda500(200+choiceMoneda500);
+            System.out.println(m.getSerie());
+            exp.setMoneda(m);
+        }
+        else if (zonaMoneda1000.contienePunto(e.getX(),e.getY())){
+            choiceMoneda1000++;
+            m = new Moneda1000(300+choiceMoneda1000);
+            System.out.println(m.getSerie());
+            exp.setMoneda(m);
+        }
+        else if (zonaMoneda1500.contienePunto(e.getX(),e.getY())){
+            choiceMoneda1500++;
+            m = new Moneda1500(400+choiceMoneda1500);
+            System.out.println(m.getSerie());
+            exp.setMoneda(m);
+        }
+
+        if (exp.zonaCoca.contienePunto(e.getX(), e.getY())) {
+            this.opc = PrecioProducto.COCA;
+
+        } else if (exp.zonaSprite.contienePunto(e.getX(), e.getY())) {
+            this.opc = PrecioProducto.SPRITE;
+
+        } else if (exp.zonaFanta.contienePunto(e.getX(), e.getY())) {
+            this.opc = PrecioProducto.FANTA;
+
+        } else if (exp.zonaSnikers.contienePunto(e.getX(), e.getY())) {
+            this.opc = PrecioProducto.SNICKERS;
+
+        } else if (exp.zonaSuper8.contienePunto(e.getX(), e.getY())) {
+            this.opc = PrecioProducto.SUPER8;
+        } else {
+            this.opc = null;
+        }
+
+        if (zonaRetiro.contienePunto(e.getX(), e.getY())) {
             exp.dep.vaciarRetiro();
+            exp.expendedor.cajaRetiro.setProducto(null);
+            yaCompro = false;
+        }
+        if (!yaCompro && opc != null && exp.expendedor != null){
+            comprador = new Comprador(m,opc,exp.expendedor);
+            System.out.println(comprador.cuantoVuelto());
+            this.opc = null;
+            yaCompro = true;
         }
         if (zonaComer.contienePunto(e.getX(),e.getY())){
             exp.dep.comerProducto();
-        }
-        if (zonaMoneda100.contienePunto(e.getX(),e.getY())){
-            choiceMoneda100++;
-            Moneda m = new Moneda100(100+choiceMoneda100);
-            System.out.println(m.getSerie());
-            exp.setMoneda(m);
-        }
-        if (zonaMoneda500.contienePunto(e.getX(),e.getY())){
-            choiceMoneda500++;
-            Moneda m = new Moneda500(200+choiceMoneda500);
-            System.out.println(m.getSerie());
-            exp.setMoneda(m);
-        }
-        if (zonaMoneda1000.contienePunto(e.getX(),e.getY())){
-            choiceMoneda1000++;
-            Moneda m = new Moneda1000(300+choiceMoneda1000);
-            System.out.println(m.getSerie());
-            exp.setMoneda(m);
-        }
-        if (zonaMoneda1500.contienePunto(e.getX(),e.getY())){
-            choiceMoneda1500++;
-            Moneda m = new Moneda1500(400+choiceMoneda1500);
-            System.out.println(m.getSerie());
-            exp.setMoneda(m);
         }
     }
     public void paint(Graphics g) {
